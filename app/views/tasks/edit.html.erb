@@ -6,6 +6,8 @@
   <%= f.label :details %>
   <%= f.text_field :details %>
   <%= f.label :completed %>
-  <%= f.boolean :completed %>
+  <%= f.check_box :completed %>
   <%= f.submit %>
 <% end %>
+
+<%= link_to "Back to list", list_path %>

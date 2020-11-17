@@ -17,7 +17,7 @@ class TasksController < ApplicationController
   end
 
   def edit
-    #@task = Task.find(params[:id])
+    @task = Task.find(params[:id])
   end
 
   def update
@@ -27,14 +27,15 @@ class TasksController < ApplicationController
     redirect_to list_path
   end
 
-  def remove
+  def destroy
     @task = Task.find(params[:id])
     @task.destroy
+
+    redirect_to list_path
   end
 
   def show
     @task = Task.find(params[:id])
-    #@task = @tasks.find { |task| task["id"] == params[:id].to_i }
   end
 
   private
